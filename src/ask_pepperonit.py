@@ -3,7 +3,7 @@
 
 import wikipedia
 import config
-import search_google
+import search_google.api
 
 def ask_wikipedia_api(question, wiki_lang):
     """
