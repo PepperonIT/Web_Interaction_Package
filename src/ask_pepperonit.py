@@ -2,6 +2,8 @@
 """
 
 import wikipedia
+import config
+import search_google
 
 def ask_wikipedia_api(question, wiki_lang):
     """
@@ -30,3 +32,36 @@ def get_info_wikipedia(term, wiki_lang):
 
     return (summary, 
     "https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png")
+    
+def ask_google_api(question):
+        """
+        End half of ask_google, it calls the helper function get_info_google
+        question: string input to google api
+        """
+        picture = get_info_google(question)
+        return picture
+    
+def get_info_google(term):
+    """
+    Helper function that calls Google's API with custom CE and settings
+    term: A string as input into a google search engine
+    """
+    # Define buildargs for api api
+    buildargs = {
+        "serviceName": "customsearch",
+        "version": "v1",
+        "developerKey": config.GOOGLE_API
+    }
+    # Define cseargs for search
+    cseargs = {
+        "q": term + ";jpg/png",
+        "cx": config.GOOGLE_CX,
+        "num": 1,
+        "searchType": "image"
+    }
+    results = search_google.api.results(buildargs, cseargs)
+    links = results.get_values('items', 'link')
+    links = results.links
+    links = str(links[0])
+    print("[INFO]: google_link: " + links)# pylint: disable=superfluous-parens
+    return links# pylint: disable=inconsistent-return-statements
