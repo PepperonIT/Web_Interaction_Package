@@ -31,7 +31,6 @@ class Ask:
         try:
             page = wikipedia.page(term)
             image = page.images[0] 
-            print("[INFO]: wiki image: " + image)# pylint: disable=superfluous-parens
             return summary, image
 
         except IndexError as error:
@@ -70,9 +69,12 @@ class Ask:
         links = results.get_values('items', 'link')
         links = results.links
         links = str(links[0])
-        print("[INFO]: google_link: " + links)# pylint: disable=superfluous-parens
         return links# pylint: disable=inconsistent-return-statements
 
-    def wikipedia_set_lang(self, lang)
+    def wikipedia_set_lang(self, lang):
+        """
+        Helper function to change Wikipedia language
+        lang: Wikipedia language, e.g. "sv" for Swedish
+        """
         wikipedia.set_lang(lang)
         return
