@@ -16,7 +16,7 @@ class Ask:
         question: the string input to wiki api
         wiki_lang: the language for wikipedia to search in, e.g. "sv"
         """
-        summary, image = get_info_wikipedia(question)
+        summary, image = self.get_info_wikipedia(question)
         return summary, image
         
         
@@ -43,7 +43,7 @@ class Ask:
             End half of ask_google, it calls the helper function get_info_google
             question: string input to google api
             """
-            picture = get_info_google(question)
+            picture = self.get_info_google(question)
             return picture
         
     def get_info_google(self, term):

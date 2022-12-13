@@ -12,8 +12,33 @@ Run the following to install:
 pip install ask_pepperonit
 ```
 
-## Usage
-TODO
+## Usage / Example
+Usage will be demonstrated with bash/terminal use.
+
+
+In order to use the module, we import the Ask class from the module:
+
+```bash
+python
+```
+
+```python
+from ask_pepperonit import Ask
+```
+
+Then we instatiate the Ask class with your Google search engine information.
+
+```python
+ask = Ask("YOUR_GOOGLE_API_KEY", "YOUR_GOOGLE_CX_KEY")
+```
+
+Now we can simply call either ask_google_api or ask_wikipedia_api with a string input
+
+```python
+ask.ask_google_api("Cats and dogs")
+```
+
+To which the method returns a string, a link to a google image (Link provided in the terminal aswell)
 
 ## Contribution
 ```bash
