@@ -1,3 +1,5 @@
+# coding=utf-8
+
 """ Pepper module utilizing Google and Wikipedia API
 """
 
@@ -24,7 +26,7 @@ class Ask:
         """
         term: A string as input into a wikipedia search
         """
-        wikipedia.set_lang("sv")
+        # wikipedia.set_lang("sv")
         summary = wikipedia.summary(term, sentences=2)
         try:
             page = wikipedia.page(term)
@@ -70,3 +72,7 @@ class Ask:
         links = str(links[0])
         print("[INFO]: google_link: " + links)# pylint: disable=superfluous-parens
         return links# pylint: disable=inconsistent-return-statements
+
+    def wikipedia_set_lang(self, lang)
+        wikipedia.set_lang(lang)
+        return
