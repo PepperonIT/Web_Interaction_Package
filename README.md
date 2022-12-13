@@ -15,5 +15,15 @@ pip install ask_pepperonit
 ## Usage
 TODO
 
+## Contribution
+```bash
+python setup.py bdist_wheel sdist
+```
+then:
+```bash
+twine upload .\dist\ask_pepperonit-x.x.x-py3-none-any.whl .\dist\ask_pepperonit-x.x.x.tar.gz
+```
+Where "x.x.x" is the version number set in the setup.py file, e.g. "0.0.1"
+
 ## LICENSE
 MIT License

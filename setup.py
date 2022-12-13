@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='ask_pepperonit',
-    version='0.0.1',
+    version='0.0.3',
     description='Say Hello!',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -15,7 +15,8 @@ setup(
     author="Oscar Lundberg",
     author_email="jensoscarlundberg95@gmail.com",
     install_requires = [
-        "blessings ~= 1.7",
+        "wikipedia ~= 1.4.0",
+        "search_google ~= 1.2.1",
     ],
     classifiers=[
         "Programming Language :: Python :: 2.7",
